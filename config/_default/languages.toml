@@ -1,0 +1,7 @@
+[zh-tw]
+  languageName = "繁體中文"
+  weight = 1
+  title = "LJT Hub"
+  [zh-tw.params]
+    subtitle = "歡迎來到我的數位世界"
+    description = "LJT Hub - 個人技術部落格與作品集"

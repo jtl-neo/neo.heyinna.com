@@ -1,0 +1,12 @@
+baseURL = 'https://www.ljthub.com/'
+languageCode = 'zh-tw'
+title = 'LJT Hub'
+theme = 'hugo-theme-stack'
+
+[params]
+  description = "LJT Hub - 個人技術部落格與作品集"
+  github = "linjingtang"
+  
+  [params.author]
+    name = "LJT"
+    email = "hello@ljthub.com"
