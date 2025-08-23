@@ -9,6 +9,8 @@ draft: false
 
 歡迎與我聯絡！無論是技術討論、專案合作，還是單純的交流，我都很樂意與你聯繫。
 
+![LJT 的照片](/img/avatar.png "LJT 的個人照片")
+
 ### 🚀 快速聯絡
 
 - **Email**: [hello@ljthub.com](mailto:hello@ljthub.com)
