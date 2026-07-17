@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Announcements from './components/Announcements';
 import Home from './pages/Home';
@@ -8,7 +8,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <BrowserRouter basename="/~ljthub/profile">
+    <HashRouter>
       <ScrollToTop />
       <Announcements />
       <Navbar />
@@ -17,7 +17,7 @@ function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
