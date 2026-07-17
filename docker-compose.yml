@@ -1,0 +1,12 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: neo-heyinna-com
+    ports:
+      - "28090:80"
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./assets:/usr/share/nginx/html/assets:ro
+      - ./projects:/usr/share/nginx/html/projects:ro
+      - ./vite.svg:/usr/share/nginx/html/vite.svg:ro
+    restart: unless-stopped
