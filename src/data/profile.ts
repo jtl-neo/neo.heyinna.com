@@ -4,9 +4,8 @@ export const profile = {
         en: 'Neo Lin',
     },
     title: '互動工程師 | Creative Technologist',
-    phone: '+886 908-802-382',
-    email: 'ljthub@gmail.com',
-    website: 'https://www.ljthub.com',
+    email: 'neo@heyinna.com',
+    website: 'https://neo.heyinna.com',
     summary:
         '我畢業於數位內容科技學系，以全系排名第一的優異成績展現嚴謹的學術能力。專精於 Creative Technology 領域，擅長將 AI 視覺 (YOLO/MediaPipe)、物聯網 (MQTT/Modbus TCP) 與雲端架構整合至大型互動場景。曾主導多屆元宵燈會之萬人級互動系統部署。',
     goal: '目前致力於進入資工所深造，期望結合資工系紮實的底層理論（演算法、系統優化），將實務經驗轉化為科學研究，目標成為具備技術素養的人機互動專家。',

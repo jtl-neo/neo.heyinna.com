@@ -18,18 +18,11 @@ export default function Contact() {
                                     <div className="contact-value">{profile.email}</div>
                                 </div>
                             </a>
-                            <a href={`tel:${profile.phone}`} className="glass-card contact-link-card">
-                                <span>📱</span>
-                                <div>
-                                    <div className="contact-label">Phone</div>
-                                    <div className="contact-value">{profile.phone}</div>
-                                </div>
-                            </a>
                             <a href={profile.website} target="_blank" rel="noopener noreferrer" className="glass-card contact-link-card">
                                 <span>🌐</span>
                                 <div>
                                     <div className="contact-label">Website</div>
-                                    <div className="contact-value">ljthub.com</div>
+                                    <div className="contact-value">neo.heyinna.com</div>
                                 </div>
                             </a>
                         </div>

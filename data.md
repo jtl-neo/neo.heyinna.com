@@ -4,9 +4,8 @@
 
 **互動工程師**
 
-* **電話：** +886 908-802-382
-* **Email：** ljthub@gmail.com
-* **個人網站：** [www.ljthub.com](http://www.ljthub.com)
+* **Email：** neo@heyinna.com
+* **個人網站：** [neo.heyinna.com](http://neo.heyinna.com)
 
 ---
 
