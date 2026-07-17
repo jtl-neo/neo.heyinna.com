@@ -1,0 +1,72 @@
+name: Build and Deploy
+
+# Requires the Vite SOURCE in this repo (package.json, src/, vite.config.*).
+# Builds once, then deploys the same dist/ to GitHub Pages AND Cloudflare Pages.
+#
+# Repo secrets needed for the Cloudflare job:
+#   CLOUDFLARE_API_TOKEN   (My Profile > API Tokens; "Cloudflare Pages: Edit")
+#   CLOUDFLARE_ACCOUNT_ID  (Cloudflare dashboard URL / Workers & Pages overview)
+#
+# For a custom domain at the root (neo.heyinna.com) keep Vite base "/" (default).
+# For the github.io/<repo> subpath, set `base: "/neo.heyinna.com/"` in vite.config.
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "deploy"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build          # -> dist/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: dist
+
+  deploy-github-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site-dist
+          path: dist
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-cloudflare-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site-dist
+          path: dist
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=neo-heyinna --branch=main
